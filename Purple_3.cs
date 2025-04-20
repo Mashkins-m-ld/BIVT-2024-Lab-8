@@ -108,7 +108,7 @@ namespace Lab_8
                 
                 //ищем чем можем заменить 
      
-                for (int j = 32; j < 127; j++)
+                for (int j = 33; j < 127; j++)
                 {
                     if (!chars.Contains((char)j))
                     {

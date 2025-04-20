@@ -91,6 +91,18 @@ namespace Lab_8
                  
                 }
 
+                //если в строке одно слово 
+                if (current.Length <= 1)
+                {
+                    while (length < 50)
+                    {
+                        current[0] += " ";
+                        length++;
+                    }
+                    result[i] = string.Join("", current);
+                    continue;
+                }
+
 
                 int index = 0;
                 while (length < 50)
