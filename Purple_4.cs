@@ -14,16 +14,16 @@ namespace Lab_8
 
         //свойства 
         public string Output => _output;
-        public (string, char)[] Codes
-        {
-            get
-            {
-                if (_codes == null) return null;
-                (string, char)[] copy = new (string, char)[_codes.Length];
-                Array.Copy(_codes, copy, _codes.Length);
-                return copy;
-            }
-        }
+        //public (string, char)[] Codes
+        //{
+        //    get
+        //    {
+        //        if (_codes == null) return null;
+        //        (string, char)[] copy = new (string, char)[_codes.Length];
+        //        Array.Copy(_codes, copy, _codes.Length);
+        //        return copy;
+        //    }
+        //}
 
 
 

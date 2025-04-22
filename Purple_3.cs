@@ -42,7 +42,8 @@ namespace Lab_8
             (string, int)[] combUnic = new (string, int)[] { };
 
             //все уникальные символы строки
-            string chars = "" + _input[0];
+
+            string chars = ""+_input[0];
 
             string result = string.Copy(_input);
 
@@ -50,7 +51,7 @@ namespace Lab_8
             {
 
 
-                if (!chars.Contains(_input[i + 1]) && char.IsLetter(_input[i+1]))
+                if (!chars.Contains(_input[i + 1]))//&& char.IsLetter(_input[i+1])
                 {
                     chars += _input[i + 1];
                 }
@@ -69,6 +70,7 @@ namespace Lab_8
                     {
                         flag = true;
                         combUnic[j].Item2 += 1;
+         
                         break;
                     }
                 }
@@ -78,6 +80,8 @@ namespace Lab_8
                     Array.Resize(ref combUnic, combUnic.Length + 1);
                     combUnic[combUnic.Length - 1].Item1 = twoCh;
                     combUnic[combUnic.Length - 1].Item2 = 1;
+                   
+                        
                 }
             }
 
@@ -115,6 +119,7 @@ namespace Lab_8
                         result = result.Replace(combUnic[i].Item1, "" + (char)j);
                         Array.Resize(ref _codes, _codes.Length + 1);
                         _codes[_codes.Length - 1] = (combUnic[i].Item1, (char)j);
+                        //Console.WriteLine($"{combUnic[i].Item1},{(char)j},{combUnic[i].Item2}");
                         chars += (char)j;
                         break;
                     }
