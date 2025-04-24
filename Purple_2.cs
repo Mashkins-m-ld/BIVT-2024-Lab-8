@@ -79,7 +79,7 @@ namespace Lab_8
             }
             
             //ровно 50 символов 
-            for (int i = 0; i < result.Length-1; i++)
+            for (int i = 0; i < result.Length; i++)
             {
                 int length = result[i].Length;
                 string[] current = result[i].Split(' ');
@@ -94,11 +94,11 @@ namespace Lab_8
                 //если в строке одно слово 
                 if (current.Length <= 1)
                 {
-                    while (length < 50)
-                    {
-                        current[0] += " ";
-                        length++;
-                    }
+                    //while (length < 50)
+                    //{
+                    //    current[0] += " ";
+                    //    length++;
+                    //}
                     result[i] = string.Join("", current);
                     continue;
                 }
@@ -134,7 +134,7 @@ namespace Lab_8
             string answer = "";
             for (int i = 0; i < _output.Length; i++)
             {
-                answer += _output[i] + ($"{Environment.NewLine}") ;
+                answer += _output[i] +($"{Environment.NewLine}") ;
             }
             return answer;
 
