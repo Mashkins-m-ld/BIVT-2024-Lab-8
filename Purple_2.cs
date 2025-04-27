@@ -132,10 +132,11 @@ namespace Lab_8
             if (_output == null) return null;
 
             string answer = "";
-            for (int i = 0; i < _output.Length; i++)
+            for (int i = 0; i < _output.Length-1; i++)
             {
-                answer += _output[i] +($"{Environment.NewLine}") ;
+                answer += _output[i] + ($"{Environment.NewLine}");
             }
+            answer += _output[_output.Length - 1];
             return answer;
 
         }

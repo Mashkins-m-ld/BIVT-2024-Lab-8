@@ -37,12 +37,18 @@ namespace Lab_8
                     if (!char.IsLetter(words[i][end])) end--;
                 }
 
+                //проверки
                 if (start >= end) continue;//если нет букв
+                
                 //отделить начало
                 string startString = words[i].Substring(0, start);
 
                 //середина и развернуть
                 string middleString = words[i].Substring(start, end-start+1);
+
+                //проверка на порядковые числительные
+                if (middleString == "th" || middleString == "st" || middleString == "nd" || middleString == "rd") continue;
+
                 char[] chars = middleString.ToCharArray();
                 Array.Reverse(chars);
                 middleString = String.Join("", chars);
@@ -53,32 +59,6 @@ namespace Lab_8
                 //соединили
                 words[i] = startString + middleString + endString;
 
-                //if (char.IsLetter(words[i][0]))
-                //{
-                //    if (Char.IsPunctuation(words[i][words[i].Length - 1])) // если последний символ пунктуация
-                //    {
-                //        char[] chars = words[i].ToCharArray();//разделить слово на символы
-
-                //        char last_char = chars[chars.Length - 1];//отделить последнюю букву
-
-                //        Array.Resize(ref chars, chars.Length - 1);//сократить
-                //        Array.Reverse(chars);//перевернула 
-                //        Array.Resize(ref chars, chars.Length + 1);
-                //        chars[chars.Length - 1] = last_char;
-
-                //        words[i] = String.Join("", chars);
-
-
-                //    }
-                    
-                //    else
-                //    {
-                //        char[] chars = words[i].ToCharArray();//разделить слово на символы
-                //        Array.Reverse(chars);//перевернула 
-                //        words[i] = String.Join("", chars); //соединить 
-                //    }
-                //}
-                
             }
 
             //соединить все слова в одну строку в аутпут 
